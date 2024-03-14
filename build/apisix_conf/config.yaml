@@ -1,0 +1,11 @@
+apisix:
+  extra_lua_path: /opt/?.lua
+nginx_config:
+  http:
+deployment:
+  admin:
+    allow_admin:
+      - 0.0.0.0/0
+  etcd:
+    host:
+      - http://etcd:2397

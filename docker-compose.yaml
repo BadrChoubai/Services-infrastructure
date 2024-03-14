@@ -1,0 +1,27 @@
+version: "3"
+services:
+  apisix-dashboard:
+    image: apache/apisix-dashboard:2.13-alpine
+    volumes:
+      - ./apisix_conf/_dashboard.yaml:/usr/local/apisix/_dashboard/conf/config.yaml
+    ports:
+      - "9000:9000"
+    depends_on:
+      - apisix
+  apisix:
+    image: apache/apisix:3.8.0-debian
+    volumes:
+      - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
+    ports:
+      - "9080:9080"
+      - "9180:9180"
+    depends_on:
+      - etcd
+    restart: on-failure
+  etcd:
+    image: bitnami/etcd:3.5.12
+    environment:
+      ETCD_ENABLE_V2: true
+      ALLOW_NONE_AUTHENTICATION: yes
+      ETCD_ADVERTISE_CLIENT_URLS: http://0.0.0.0:2397
+      ETCD_LISTEN_CLIENT_URLS: http://0.0.0.0:2397
