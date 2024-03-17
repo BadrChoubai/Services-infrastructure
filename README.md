@@ -6,8 +6,8 @@ This project contains infrastructure as code resources for deploying an API Gate
 
 ## Todos
 
--[ ] Setup service registry for Local services
--[ ] Setup service registry for Deployed services
+- [ ] Setup service registry for Local services
+- [ ] Setup service registry for Deployed services
 
 ### Inspired By:
 
