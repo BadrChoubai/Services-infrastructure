@@ -54,6 +54,13 @@ services:
     networks:
       apisix:
 
+    # C#/.NET Services
+  user:
+    build: Users
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
 networks:
   apisix:
     driver: bridge

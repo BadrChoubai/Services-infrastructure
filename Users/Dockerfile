@@ -1,7 +1,7 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 as base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8081
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 as build
 WORKDIR /src
