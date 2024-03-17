@@ -19,6 +19,18 @@ services:
     networks:
       apisix:
 
+  apisix-dashboard:
+    image: apache/apisix-dashboard:2.13-alpine
+    restart: always
+    volumes:
+      - ./build/apisix/_dashboard.yaml:/usr/local/apisix-dashboard/conf/conf.yaml:ro
+    depends_on:
+      - etcd
+    ports:
+      - "9000:9000/tcp"
+    networks:
+      - apisix
+
   etcd:
     image: bitnami/etcd:3.5.11
     restart: always
@@ -54,16 +66,21 @@ services:
     networks:
       apisix:
 
-    # C#/.NET Services
+  # C#/.NET Services
   user:
     build: Users
     ports:
       - "8080:8080"
       - "8081:8081"
+    networks:
+      default:
+        aliases:
+          - user.service
 
 networks:
   apisix:
     driver: bridge
+
 
 volumes:
   etcd_data:
