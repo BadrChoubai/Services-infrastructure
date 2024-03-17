@@ -2,10 +2,12 @@ apisix:
   extra_lua_path: /opt/?.lua
 nginx_config:
   http:
+    custom_lua_shared_dict:
+      plugin-unauth-limit: 100m
 deployment:
   admin:
     allow_admin:
       - 0.0.0.0/0
   etcd:
     host:
-      - http://etcd:2397
+      - http://etcd:2379
