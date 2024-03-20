@@ -25,6 +25,9 @@ services:
     volumes:
       - ./build/apisix/_dashboard.yaml:/usr/local/apisix-dashboard/conf/conf.yaml:ro
     depends_on:
+      - apisix
+      - grafana
+      - prometheus
       - etcd
     ports:
       - "9000:9000/tcp"
