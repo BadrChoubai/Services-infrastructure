@@ -3,7 +3,7 @@ version: "3"
 
 services:
   apisix:
-    image: apache/apisix:3.8.0-debian
+    image: apache/apisix:3.7.0-debian
     restart: always
     volumes:
       - ./build/apisix/config.yaml:/usr/local/apisix/conf/config.yaml:ro
@@ -20,7 +20,7 @@ services:
       apisix:
 
   apisix-dashboard:
-    image: apache/apisix-dashboard:2.13-alpine
+    image: apache/apisix-dashboard:3.0.0-alpine
     restart: always
     volumes:
       - ./build/apisix/_dashboard.yaml:/usr/local/apisix-dashboard/conf/conf.yaml:ro
@@ -74,8 +74,15 @@ services:
   # read more in: `registry/README.md`
   users-service:
     image: localhost:5000/buddy/user-service
+    restart: always
+    volumes:
+      - ./upstream/web1.conf:/etc/nginx/nginx.conf
     ports:
-      - "8080:8080"
+      - "9081:80/tcp"
+    environment:
+      - NGINX_PORT=80
+    networks:
+      apisix:
 
 networks:
   apisix:
