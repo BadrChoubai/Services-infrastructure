@@ -4,9 +4,16 @@ This project contains infrastructure as code resources for deploying an API Gate
 
 > This repository: [Services](https://github.com/BadrChoubai/Services), contains the individual services that are ingested by this project
 
-## Todos
+## Setting up a Container Registry Locally
 
-- [ ] Setup service registry for Local services
+Inside of `/registry`, there is a simple `docker-compose.yaml` file for pulling and running the official Docker Registry image.
+
+Once that's up and running you can start to develop APIs inside of [Services](https://github.com/BadrChoubai/Services) locally 
+and push their container images to it so that they can be ingested by this project's own `docker-compose.yaml` (at the root of the project).
+
+### Todos
+
+- [x] Setup service registry for Local services
 - [ ] Setup service registry for Deployed services
 
 ### Inspired By:

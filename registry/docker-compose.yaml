@@ -3,6 +3,7 @@ version: '3'
 services:
   registry:
     image: registry
+    container_name: services-local-registry
     ports:
       - "5000:5000"
     environment:
