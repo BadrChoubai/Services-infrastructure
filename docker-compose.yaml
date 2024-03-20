@@ -72,6 +72,10 @@ services:
   # Services
   # These can be ingested by building and pushing container images to a local Container repository
   # read more in: `registry/README.md`
+  users-service:
+    image: localhost:5000/buddy/user-service
+    ports:
+      - "8080:8080"
 
 networks:
   apisix:
