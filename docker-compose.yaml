@@ -66,13 +66,13 @@ services:
     networks:
       apisix:
 
-  # C#/.NET Services
-  # TODO: Setup service registry
+  # Services
+  # These can be ingested by building and pushing container images to a local Container repository
+  # read more in: `registry/README.md`
 
 networks:
   apisix:
     driver: bridge
-
 
 volumes:
   etcd_data:
