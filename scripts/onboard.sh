@@ -18,7 +18,7 @@ curl http://localhost:9180/apisix/admin/upstreams/1 -H 'X-API-KEY: abcdefghijklm
       }
     }
   },
-  "desc": "upstream to direct traffic to 8081",
+  "desc": "upstream to direct traffic to users-service-v1",
   "name": "users-service-v1 upstream",
   "type": "roundrobin",
   "nodes": {
