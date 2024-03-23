@@ -2,7 +2,7 @@
 
 This project contains infrastructure as code resources for deploying an API Gateway with Apache APISIX
 
-> This repository: [Services](https://github.com/BadrChoubai/Services), contains the individual services that are ingested by this project
+> A seperate repository: [Services](https://github.com/BadrChoubai/Services), contains the individual services that are ingested by this project inside of `docker-compose.yaml`
 
 ## Setting up a Container Registry Locally
 
@@ -14,7 +14,6 @@ and push their container images to it so that they can be ingested by this proje
 ### Todos
 
 - [x] Setup service registry for Local services
-- [ ] Setup service registry for Deployed services
 
 ### Inspired By:
 
