@@ -22,8 +22,6 @@ authentication:
   users:
     - username: admin
       password: admin
-    - username: user
-      password: user
 plugins:
   - api-breaker
   - basic-auth
