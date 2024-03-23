@@ -43,6 +43,7 @@ echo
 echo
 echo
 
+echo "Service HTTP call:"
 #(curl -i -X GET "http://localhost:8081/health")
 echo "Gateway HTTP call:"
-(curl -i -X GET "http://localhost:9080/health/" -H 'Host: users-service-v1')
+(curl -i -X GET "http://localhost:9080/health" -H 'Host: users-service-v1')
