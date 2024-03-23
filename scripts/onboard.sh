@@ -35,7 +35,5 @@ curl http://localhost:9180/apisix/admin/upstreams/1 -H 'X-API-KEY: abcdefghijklm
 }')
 
 
-#(curl -i -X GET "http://localhost:9080/health")
 #(curl -i -X GET "http://localhost:8081/health")
-#(curl -i -X GET "http://localhost:9080/api/v1/users/health")
-#(curl -i -X GET http://localhost:8081/health)
+(curl -i -X GET "http://localhost:9080/api/v1/users/health")
